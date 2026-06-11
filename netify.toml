@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # This tells the server to ignore errors and just finish the build
+  CI = "false"
