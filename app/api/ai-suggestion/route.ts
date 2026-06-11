@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   try {
     const { name, amt, country, currency } = await req.json();
 
-    const prompt = `Act as a tax accountant. A user in ${country} spent ${currency}${amt} on "${name}". Is this a valid business deduction? Give a short, professional 1-sentence suggestion.`;
+    const prompt = `Act as a tax accountant. A user in India spent ₹{amt} on "₹{name}". Is this a valid business deduction? Give a short, professional 1-sentence suggestion.`;
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
